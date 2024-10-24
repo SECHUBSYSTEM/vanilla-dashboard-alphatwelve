@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <span class="logo-full">Full Logo</span>
+            <span class="logo-initials">FL</span>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="active">
+              <a href="#"><i data-lucide="home"></i><span>Home</span></a>
+            </li>
+            <li>
+              <a href="#"><i data-lucide="calendar"></i><span>Events</span></a>
+            </li>
+            <li>
+              <a href="#"><i data-lucide="users"></i><span>Speakers</span></a>
+            </li>
+            <li>
+              <a href="#"
+                ><i data-lucide="bar-chart-2"></i><span>Reports</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <i data-lucide="bell"></i>
+                <span>Notifications</span>
+                <span class="badge">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><i data-lucide="message-square"></i><span>Messages</span></a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i data-lucide="settings"></i><span>Settings</span></a
+              >
+            </li>
+            <div class="sidebar-footer">
+              <button id="collapse-btn" class="collapse-btn">
+                <i data-lucide="chevrons-left"></i>
+                <span>Collapse</span>
+              </button>
+            </div>
+            <li>
+              <div class="dark-mode-toggle">
+                <input
+                  type="checkbox"
+                  id="dark-mode-toggle"
+                  class="dark-mode-checkbox"
+                />
+                <label for="dark-mode-toggle" class="dark-mode-label">
+                  <i data-lucide="moon"></i>
+                  <span>Dark mode</span>
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="user-info">
+                <img
+                  src="https://i.pravatar.cc/40?img=3"
+                  alt="User Avatar"
+                  class="avatar"
+                />
+                <div class="user-details">
+                  <p class="user-name">Rudra Devi</p>
+                  <p class="user-email">rudra.devi@gmail.com</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <h1>Welcome! here's your summary</h1>
+        <div class="summary-cards">
+          <div class="card">
+            <div class="card-header">
+              <h2>Total Events</h2>
+              <i data-lucide="info"></i>
+            </div>
+            <div class="card-hold">
+              <p class="card-value">100,000</p>
+              <p class="card-change positive">
+                <img style="padding-right: 0.5rem" src="VectorU.png" /> +5.0%
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Active Speakers</h2>
+              <i data-lucide="info"></i>
+            </div>
+            <div class="card-hold">
+              <p class="card-value">25</p>
+              <p class="card-change negative">
+                <img style="padding-right: 0.5rem" src="VectorD.png" /> -3.0%
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Total Registrations</h2>
+              <i data-lucide="info"></i>
+            </div>
+            <div class="card-hold">
+              <p class="card-value">300</p>
+              <p class="card-change positive">
+                <img style="padding-right: 0.5rem" src="VectorU.png" /> +5.0%
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h2>Total Revenue</h2>
+              <i data-lucide="info"></i>
+            </div>
+            <div class="card-hold">
+              <p class="card-value">$500,000</p>
+              <p class="card-change positive">
+                <img src="VectorU.png" style="padding-right: 0.5rem" />
+                +5.0%
+              </p>
+            </div>
+          </div>
+        </div>
+        <h2 class="chart-carousel-container-h">
+          Event Registrations per month
+        </h2>
+        <div class="chart-carousel-container">
+          <div class="chart-container equal-width">
+            <canvas id="registrationChart"></canvas>
+          </div>
+          <div class="carousel-container equal-width">
+            <div class="carousel">
+              <div class="carousel-item">
+                <img src="/Slide1.png" alt="News 1" />
+                <div class="carousel-caption">
+                  <h3>Latest News & Updates</h3>
+                  <p>
+                    Turpis interdum nunc varius ornare dignissim pretium. Massa
+                    ornare quis aliquet sed vitae.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Slide2.png" alt="News 2" />
+                <div class="carousel-caption">
+                  <h3>Latest News & Updates</h3>
+                  <p>
+                    Sed velit nisi, fermentum erat. Fringilla purus, erat
+                    fringilla tincidunt quisque non.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/Slide3.png" alt="News 3" />
+                <div class="carousel-caption">
+                  <h3>Latest News & Updates</h3>
+                  <p>
+                    Pellentesque in ut tellus. Turpis interdum nunc varius
+                    ornare dignissim pretium.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-prev">
+              <img src="Vector2.png" />
+            </button>
+            <button class="carousel-next">
+              <img src="Vector1.png" />
+            </button>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+        <div class="events-history">
+          <div class="events-header">
+            <h2>Events History</h2>
+            <div class="events-actions">
+              <button class="icon-btn">
+                <i
+                  style="height: 70%; width: 70%; color: #141414"
+                  data-lucide="more-vertical"
+                ></i>
+              </button>
+              <button class="export-btn">
+                <i
+                  style="height: 70%; width: 70%; color: #141414"
+                  data-lucide="download"
+                ></i>
+                Export
+              </button>
+            </div>
+          </div>
+          <div class="events-filters">
+            <div class="search-container">
+              <i
+                style="height: 11%; width: 11%; color: #141414"
+                data-lucide="search"
+              ></i>
+              <input type="text" placeholder="Search..." id="search-input" />
+            </div>
+            <div class="filter-selects">
+              <select>
+                <option>Date</option>
+              </select>
+              <select>
+                <option>Status</option>
+              </select>
+              <select>
+                <option>Name</option>
+              </select>
+            </div>
+            <div class="results-info">
+              Displaying <span id="displayed-results">0</span> of
+              <span id="total-results">0</span> results
+            </div>
+            <div class="sort-container">
+              <span>Sort:</span>
+              <select>
+                <option value="date">Most Recent</option>
+                <option value="name">Name</option>
+                <option value="speaker">Speaker</option>
+                <option value="status">Status</option>
+              </select>
+            </div>
+          </div>
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Speaker</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody style="color: #6b7280" id="events-table-body"></tbody>
+          </table>
+          <div class="events-footer">
+            <div class="pagination" id="pagination">
+              <button class="pagination-arrow" id="prev-page">
+                <img
+                  src="Vector2.png"
+                  style="height: 40%; width: 40%; color: #141414"
+                />
+              </button>
+              <!-- Pagination buttons will be inserted here -->
+              <button class="pagination-arrow" id="next-page">
+                <img
+                  src="Vector1.png"
+                  style="height: 40%; width: 40%; color: #141414"
+                />
+              </button>
+            </div>
+            <div class="rows-select">
+              <span>Show:</span>
+              <select id="rows-per-page">
+                <option value="5">5 rows</option>
+                <option value="10" selected>10 rows</option>
+                <option value="20">20 rows</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="event-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-event-name"></h2>
+        <p id="modal-event-date"></p>
+        <p id="modal-event-description"></p>
+        <p id="modal-event-speakers"></p>
+        <p id="modal-event-attendees"></p>
+        <button class="delete-btn">Delete</button>
+        <button class="complete-btn">Mark as completed</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
